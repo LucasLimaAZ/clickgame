@@ -1,0 +1,39 @@
+@import '../../vars.scss';
+
+form, .login-button {
+    margin-top: 16px !important;
+}
+
+.login-box {
+    width: 30%;
+    padding: 4%;
+    margin: 0 auto 0 auto;
+    box-shadow: $default-shadow;
+    background: white;
+}
+
+.login-input {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.title {
+    font-weight: 200;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: $default-text;
+    margin: 5%;
+    text-align: center;
+}
+
+.login-title {
+    font-weight: 200;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: $default-text;
+    margin: 0;
+}
+
+body {
+    background: $light-neutral;
+}
