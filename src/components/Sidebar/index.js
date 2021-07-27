@@ -1,5 +1,6 @@
 import React from 'react'
-import { Drawer } from '@material-ui/core'
+import { Button, Drawer } from '@material-ui/core'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import './style.scss'
 
 const Sidebar = props => {
@@ -9,7 +10,11 @@ const Sidebar = props => {
             anchor='left'
             open={props.open}
         >
-            aueba?
+            <Router>
+                <Link to={'/monsters/new'}>
+                    <Button>Monsters</Button>
+                </Link>
+            </Router>
         </Drawer>
     )
 }

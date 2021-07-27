@@ -28,10 +28,10 @@ const BaseHome = () => {
                     <div className='content' onClick={() => toggleOpenSidebar(false)} >
                         <Router>
                             <Switch>
-                                <Route path='/'>
+                                <Route exact path='/'>
                                     <Home />
                                 </Route>
-                                <Route path='/monsters/new'>
+                                <Route exact path='/monsters/new'>
                                     <NewMonster />
                                 </Route>
                             </Switch>
