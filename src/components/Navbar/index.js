@@ -18,7 +18,9 @@ const Navbar = props => {
                 <Typography variant='h6' className='title'>
                     Navbar
                 </Typography>
-                <Button color='inherit'>Logout</Button>
+                <Button onClick={() => props.login(false)} color='inherit'>
+                    Logout
+                </Button>
             </Toolbar>
         </AppBar>
     )

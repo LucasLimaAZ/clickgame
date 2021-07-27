@@ -15,7 +15,7 @@ const LoginScreen = props => {
         e.preventDefault()
 
         auth.login({email: user, password}, 
-            () => props.history.push("/"), 
+            () => { props.login(true) }, 
             () => {
                 setIncorrectMessage(true)
                 setLoader(false)
@@ -49,6 +49,13 @@ const LoginScreen = props => {
                         Entrar
                     </Button>
                     <div>{ loader ? 'Carregando...' : '' }</div>
+                    { 
+                        incorrectMessage 
+                        ? <p className="incorrect-message">
+                            Usuário ou senha incorretos.
+                        </p> 
+                        : ''
+                    }
                 </form>
             </div>
         </div>

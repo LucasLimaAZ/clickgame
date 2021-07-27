@@ -6,13 +6,11 @@ class Auth{
     }
 
     login(data, callBack, elseCallBack){
-
         api.post('/auth/login', data)
             .then(response => {
-                if(response.status === 200){
+                if(response.status === 200 && response.data.access_token){
                     localStorage.setItem("access_token", response.data.access_token)
                     this.authenticated = true
-                    
                     callBack()
                 }
                 else{
@@ -25,7 +23,6 @@ class Auth{
                 elseCallBack()
                 console.error(err)
             })
-
     }
 
     logout(callBack){
