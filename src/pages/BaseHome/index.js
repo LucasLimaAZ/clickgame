@@ -8,40 +8,33 @@ import NewMonster from '../Monsters/New'
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    Link
 } from 'react-router-dom'
 
 const BaseHome = () => {
     const [openSidebar, toggleOpenSidebar] = useState(false)
     const [login, setLogin] = useState(false)
+
+    if (!login) return <LoginScreen login={setLogin}/>
     
     return (
-        login
-            ? (
-                <div className='base-home'>
-                    <Navbar 
-                        open={openSidebar} 
-                        openSidebar={toggleOpenSidebar} 
-                        login={setLogin}
-                    />
-                    <Sidebar open={openSidebar} />
-                    <div className='content' onClick={() => toggleOpenSidebar(false)} >
-                        <Router>
-                            <Switch>
-                                <Route exact path='/'>
-                                    <Home />
-                                </Route>
-                                <Route exact path='/monsters/new'>
-                                    <NewMonster />
-                                </Route>
-                            </Switch>
-                        </Router>
-                    </div>
+        <Router>
+            <div className='base-home'>
+                <Navbar 
+                    open={openSidebar} 
+                    openSidebar={toggleOpenSidebar} 
+                    login={setLogin}
+                />
+                <Sidebar open={openSidebar} />
+                <div className='content' onClick={() => toggleOpenSidebar(false)} >
+                    <Switch>
+                        <Route path='/' exact component={Home} />
+                        <Route path='/monsters' component={NewMonster} />
+                    </Switch>
                 </div>
-            )
-            : (
-                <LoginScreen login={setLogin}/>
-            )
+            </div>
+        </Router>
     )
 }
 

@@ -10,11 +10,12 @@ const Sidebar = props => {
             anchor='left'
             open={props.open}
         >
-            <Router>
-                <Link to={'/monsters/new'}>
-                    <Button>Monsters</Button>
-                </Link>
-            </Router>
+            <Link to='/'>
+                <Button>Home</Button>
+            </Link>   
+            <Link to='/monsters'>
+                <Button>Monsters</Button>
+            </Link>   
         </Drawer>
     )
 }
